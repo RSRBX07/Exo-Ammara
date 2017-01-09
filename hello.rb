@@ -1,6 +1,9 @@
 print "hello ammara"
-puts "hello"
 methode = gets
 print "comment tu t'appeles "
-puts  "bienvenu #{methode}"
+puts   "#{methode}"
 puts "ammara" 
+
+puts "salut"
+puts "salut"
+puts "salut"
