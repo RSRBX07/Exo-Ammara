@@ -11,5 +11,5 @@ age= 33*result
 puts "l'age est : #{age}"
 
 now = Time.now
-birth_time = Time.new "31/05/1975"
+birth_time = Time.ne"31/05/1975"
 age_in_sec = now-birth_time
