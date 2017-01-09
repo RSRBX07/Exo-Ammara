@@ -10,6 +10,19 @@ puts "le resultat est : #{result}"
 age= 33*result
 puts "l'age est : #{age}"
 
-now = Time.now
-birth_time = Time.ne"31/05/1975"
-age_in_sec = now-birth_time
+
+# resultat d'un tirage d'un d à 6 faces
+
+face =[1,2,3,4,5,6]
+roll = face.shuffle
+puts roll
+
+# resultat d'un tirage d'un d à 6 faces
+roll = rand 6
+puts roll
+
+# resultat d'un tirage d'un d à 6 faces
+face =[1,2,3,4,5,6]
+face_index = rand 6
+roll = face[face_index]
+puts roll
