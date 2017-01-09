@@ -1,4 +1,4 @@
-# origin du Time
+# Origin du Time
 
 sec_in_year =60*60*24*31*12
 right_now = Time.now
