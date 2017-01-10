@@ -6,6 +6,8 @@ picked_balls = available_balls.shuffle.take 5
 
 puts" le tirage du jour est : #{picked_balls.sort}"
 
+
+
 #Affichage de la cagnote
 #Entre 100 et 500 euros
 # le vendredi 13, la cagnote est de 2millions
