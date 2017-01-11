@@ -1,10 +1,10 @@
 # Afficher le tirage de 5 nombres entre 1 et 45
 
-available_balls= (1..45).to_a
+#available_balls= (1..45).to_a
 #shuffle balls and take 5
-picked_balls = available_balls.shuffle.take 5
+#picked_balls = available_balls.shuffle.take 5
 
-puts" le tirage du jour est : #{picked_balls.sort}"
+#puts" le tirage du jour est : #{picked_balls.sort}"
 
 
 
@@ -20,9 +20,49 @@ end
 puts "la cagnote du jour est de #{cagnote}"
 
 # Afficher si c'est gagner ou perdu
-# choisir une grille 
- grille = [6,26,11,23,16]
- puts "afficher la grille #{grille}"
- # comparer ma grille au tirage en cours
+def demande_de_grille                            #definir une methode demande de grille
+    puts choisir 5 nombres de 1 à 45
+    grid = gets
+    return grid
+end
+grille = demande_de_grille
+
+def input_refinement raw_grid                       # retraitement de la saisie
+
+    
+    grille = raw_grid.chomp                          #grille est une chaine de caractere string : grille.class
+    grille = grille.split " "                        # pour découper
+    refined_grid=[]
+    grille. each do |boule|                          # le each pour parcourir le tableau element par element (boule) et on le pousse
+        refined_grid.push boule.to_i
+    end
+    return refined_grid
+ end
+
+ grille = demande_de_grille
+
+ refined =input_refinement grille
+ # Afficher le tirage de 5 nombres entre 1 et 45
+ tirage = (1..45).to_a.shuffle.take 5             # tirage est une instance d un tableau 
+ tirage = [1, 2, 3, 4, 5]
+
+
+#sorting grid and draw
+sorted_grid =refined_grid.sort
+sorted_draw =tirage.sort 
+
+
+ # comaparaison de la grille et le  tirage
+ winner= sorted_grid == sorted_draw
+
+ if winner
+     puts "vous avez gagnez"
+ else
+     puts "vous avez perdu"
+ end        
+
+ 
+
+
 
 
