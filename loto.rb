@@ -21,11 +21,10 @@ puts "la cagnote du jour est de #{cagnote}"
 
 # Afficher si c'est gagner ou perdu
 def demande_de_grille                               #definir une methode demande de grille
-    puts choisir 5 nombres de 1 à 45
+    puts "choisir 5 nombres de 1 à 45"
     grid = gets
     return grid
 end
-grille = demande_de_grille
 
 def input_refinement raw_grid                       # retraitement de la saisie
 
@@ -43,32 +42,35 @@ def input_refinement raw_grid                       # retraitement de la saisie
 
  refined =input_refinement grille
 
- draw = make_draw 
+ 
 
  def make_draw                                      #methode de tirage appele make_draw   # Afficher le tirage de 5 nombres entre 1 et 45
     tirage = (1..45).to_a.shuffle.take 5            # tirage est une instance d un tableau 
     #cheat
     tirage = [1, 2, 3, 4, 5]
-    retrun tirage
+    return tirage
  end
+ draw = make_draw 
 
-.
+
 #sorting grid and draw
 sorted_grid =refined.sort
-sorted_draw =tirage.sort                           
+sorted_draw =draw.sort                           
 
 
  # comaparaison de la grille et le  tirage
- winner= sorted_grid == sorted_draw
 
- if winner
-     puts "vous avez gagnez"
- else
-     puts "vous avez perdu"
- end        
-
+ def show_result sorted_grid, sorted_draw
+  # comparons la grille et le tirage
+  winner = (sorted_grid == sorted_draw)
+  if winner
+    puts "Vous avez gagne"
+  else
+    puts "Vous avez perdu"
+  end
+end
  
 
-
+show_result sorted_grid, sorted_draw
 
 
