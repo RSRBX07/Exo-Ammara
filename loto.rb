@@ -13,8 +13,16 @@ puts" le tirage du jour est : #{picked_balls.sort}"
 # le vendredi 13, la cagnote est de 2millions
 is_vendredi_13 = true
 if is_vendredi_13
-   cagnote = 2.000.000  
+   cagnote = 2000000  
 else
-   cagnote = 100.000
+   cagnote = 100000
 end    
 puts "la cagnote du jour est de #{cagnote}"
+
+# Afficher si c'est gagner ou perdu
+# choisir une grille 
+ grille = [6,26,11,23,16]
+ puts "afficher la grille #{grille}"
+ # comparer ma grille au tirage en cours
+
+
