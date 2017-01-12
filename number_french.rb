@@ -5,7 +5,7 @@
 def french_number number
 case number
 when 0
-      "zero"
+    "zero"
 when 1
     "un"
 when 2
@@ -33,7 +33,6 @@ puts french_number 8
 
   
 
-
 # retour de chaine de caractere du chiffre
 
 def french_number number
@@ -46,11 +45,12 @@ puts french_number 6
 
 # retour de chaine de caractere de 9 à 19
 
-def french_number number
+def  french_number number
+case number  
      number = ["zero","un","deux","trois","quatre","cinq","six","cept","huit","neuf","dix","onze",
      "douze","treize","quatorze","quinze","seize"],[number]  
-      when 17..19
-      "dix-"+ french_number (number-10)  
+when 17..19
+      "dix-" + french_number(number-10)  
 end
 
 puts french_number 15
