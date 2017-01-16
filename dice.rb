@@ -1,4 +1,4 @@
-class dice
+class Dice
 end    
 
 # Resultat d'un tirage d'un d à 6 faces
