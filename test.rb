@@ -11,7 +11,7 @@
 
 # test de loto
 
-require './loto.rb'
+require './lotoavecclass.rb'
 
 loto_du_samedi = Loto.new
 2.times {loto_du_samedi.validate_grid Loto.get_flash}

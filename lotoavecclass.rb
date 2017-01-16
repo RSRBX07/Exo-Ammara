@@ -1,5 +1,5 @@
 require 'date'        # pour importer le fichier
-class Loto            # 
+class Loto             
 
   def self.get_grid # on définit une méthode self.get_grid de classe : Loto, pour créer la grille = grid
     grid = []
@@ -27,6 +27,7 @@ class Loto            #
   # enregistre une grille
   # pour le loto courant
   def validate_grid grid # methode d'instance validate_grid qui prend grid et qui renvoie 
+       
     @saved_grids ||= []  # on instancier une valeur d'instance pck ya @ et qui est un tableau ou un tableau  vide
     @saved_grids.push grid # met les information en tableau on utilise une methode push dinstance qui renvoie grid qui ds le tb qui sont saved_grid
   end 
@@ -42,7 +43,7 @@ class Loto            #
   
 
   def prize
-    cagnote = if vendredi_13? tester la methode si true cagnote=200 000 si non100 000
+    cagnote = if vendredi_13? #tester la methode si true cagnote=200 000 si non100 000
       2_000_000
     else
       100_000
@@ -63,9 +64,11 @@ class Loto            #
   def check_grid grid #methode qui prend  argument grid
     # afficher si gagne ou perdu
     if grid.sort == draw.sort #on a des instances de tableau qu on va comparer  
-       puts "You win !" # puts renvois derniere expresion évaluer cest le if ou le you win soit you loose mais renvois le nil 
+       puts "You win !" # puts renvois derniere expresion évaluer cest le if ou le you win soit you loose mais renvois le nil
+       return true 
     else
-      puts "You loose !"
+       puts "You loose !"
+       return false
     end
   end
   
