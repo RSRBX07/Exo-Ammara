@@ -7,7 +7,6 @@
 #puts" le tirage du jour est : #{picked_balls.sort}"
 
 
-
 #Affichage de la cagnote
 #Entre 100 et 500 euros
 # le vendredi 13, la cagnote est de 2millions
@@ -42,7 +41,6 @@ def input_refinement raw_grid                       # retraitement de la saisie
 
  refined =input_refinement grille
 
- 
 
  def make_draw                                      #methode de tirage appele make_draw   # Afficher le tirage de 5 nombres entre 1 et 45
     tirage = (1..45).to_a.shuffle.take 5            # tirage est une instance d un tableau 
