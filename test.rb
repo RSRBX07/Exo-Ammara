@@ -11,6 +11,8 @@
 
 # test de loto
 
+
+
 require './lotoavecclass.rb'
 
 loto_du_samedi = Loto.new
@@ -26,3 +28,12 @@ if loto_du_lundi.has_winner?
 else
   puts "nobody win"
 end
+
+
+
+
+
+require'./number_french_class.rb'
+fix_number= Number.french_number 26
+puts fix_number
+
