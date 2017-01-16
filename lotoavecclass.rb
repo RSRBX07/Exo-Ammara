@@ -19,9 +19,10 @@ class Loto
     #comprer tous les bulletins valides avec la grille gagnante
     sorted_draw = draw.sort # on instancier la variable local draw.sort dans sorted_draw une methode de rangement par l mot sort
     @saved_grids.each do |grid|# variable dinstance applique une methode each avec le paramettre grid cree pour la boucle each
-      sorted_grid = grid.sort # rangement du tableau
-      sorted_grid == sorted_draw #comparaison sorted_grid et sorted_draw sa veut dire true ou false == 
-    end
+    sorted_grid = grid.sort # rangement du tableau
+    sorted_grid == sorted_draw #comparaison sorted_grid et sorted_draw sa veut dire true ou false == 
+     
+  end
   end
 
   # enregistre une grille
@@ -61,7 +62,7 @@ class Loto
     @picked_balls
   end
 
-  def check_grid grid #methode qui prend  argument grid
+  def check_grid grid #methode qui prend argument grid
     # afficher si gagne ou perdu
     if grid.sort == draw.sort #on a des instances de tableau qu on va comparer  
        puts "You win !" # puts renvois derniere expresion évaluer cest le if ou le you win soit you loose mais renvois le nil
