@@ -1,77 +1,73 @@
+require 'date'
 class Loto
 
-# Afficher le tirage de 5 nombres entre 1 et 45
-
-#available_balls= (1..45).to_a
-#shuffle balls and take 5
-#picked_balls = available_balls.shuffle.take 5
-
-#puts" le tirage du jour est : #{picked_balls.sort}"
-
-
-    #Affichage de la cagnote
-    #Entre 100 et 500 euros
-    # le vendredi 13, la cagnote est de 2millions
-    def is_vendredi_13 = true
-    if is_vendredi_13
-      cagnote = 2000000  
-    else
-      cagnote = 100000
-    end    
-    puts "la cagnote du jour est de #{cagnote}"
-
-    # Afficher si c'est gagner ou perdu
-    def demande_de_grille                               #definir une methode demande de grille
-        puts "choisir 5 nombres de 1 à 45"
-        grid = gets
-        return grid
+  def self.get_grid # on définit une méthode self.get_grid de classe : Loto, pour créer la grille = grid
+    grid = []
+    5.times do
+      input = gets.to_i
+      grid << input # << = push : pour ajouter dans la grille ce qui a été tapé clavier
     end
-
-    def input_refinement raw_grid                       # retraitement de la saisie
-
-        
-        grille = raw_grid.chomp                          #grille est une chaine de caractere string : grille.class
-        grille = grille.split " "                        # pour découper
-        refined_grid=[]
-        grille. each do |boule|                          # le each pour parcourir le tableau element par element (boule) et on le pousse
-            refined_grid.push boule.to_i
-        end
-        return refined_grid
-    end
-
-    grille = demande_de_grille
-
-    refined =input_refinement grille
-
- 
-
-  def make_draw                                      #methode de tirage appele make_draw   # Afficher le tirage de 5 nombres entre 1 et 45
-      tirage = (1..45).to_a.shuffle.take 5            # tirage est une instance d un tableau 
-      #cheat
-      tirage = [1, 2, 3, 4, 5]
-      return tirage
+    grid
+   puts "votre grille est : #{grid}" 
   end
-  draw = make_draw 
 
+  def self.get_flash # flash : methode qui nous donne un tableau de 5 premiers chiffres allant de 1 à 45
+    (1..45).to_a.shuffle.take 5
+  end
 
-  #sorting grid and draw
-  sorted_grid =refined.sort
-  sorted_draw =draw.sort                           
+  def has_winner?
+    #comprer tous les bulletins valides avec la grille gagnante
+    sorted_draw = draw.sort
+    @saved_grids.each do |grid|
+      sorted_grid = grid.sort
+      sorted_grid == sorted_draw
+    end
+  end
 
+  # enregistre une grille
+  # pour le loto courant
+  def validate_grid grid
+    @saved_grids ||= []
+    @saved_grids.push grid
+  end 
+  # demander une grille de jeu
 
-  # comaparaison de la grille et le  tirage
+  # affichage du montant de la cagnote
+  # entre 100 et 500.000 Euros
+  # le vendredi 13, la cagnote est de 2 millions
+  def vendredi_13?
+    Date.today.day == 13 and Date.today.friday?
+  end
 
-  def show_result sorted_grid, sorted_draw
-    # comparons la grille et le tirage
-    winner = (sorted_grid == sorted_draw)
-    if winner
-      puts "Vous avez gagne"
+  
+
+  def prize
+    cagnote = if vendredi_13?
+      2_000_000
     else
-      puts "Vous avez perdu"
+      100_000
+    end
+    puts "Le montant de la cagnote du jour est de #{cagnote}"
+    cagnote
+  end
+
+  def draw
+    available_balls = (1..45).to_a
+    # shuffle balls and take 5
+    @picked_balls ||= available_balls.shuffle.take(5)
+
+    puts "Le tirage du jour est : #{@picked_balls.sort}" 
+    @picked_balls
+  end
+
+  def check_grid grid
+    # afficher si gagne ou perdu
+    if grid.sort ==
+       draw.sort
+      puts "You win !"
+    else
+      puts "You loose !"
     end
   end
   
-
-  show_result sorted_grid, sorted_draw
-
 end
