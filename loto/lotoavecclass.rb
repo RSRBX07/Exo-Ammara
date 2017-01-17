@@ -11,6 +11,19 @@ class Loto
     @picked_balls = []
   end   
 
+private
+  def self.get_grid # on définit une méthode self.get_grid de classe : Loto, pour créer la grille = grid
+    grid = []
+    5.times do  # objet c'est 5 la methode .times pour refaire la methode 5fois'
+      input = gets.to_i 
+      grid << input # << = push : pour ajouter dans la grille ce qui a été tapé clavier, grid c'est la variable local que la methode que comporte le tableau'
+    end
+    #pour retourner grid pour revoyer la methode puts qui est nil 
+    puts "votre grille est : #{grid}" 
+    grid
+  end
+
+  public
   
    def self.get_flash # flash : methode qui nous donne un tableau de 5 premiers chiffres allant de 1 à 45
     (1..45).to_a.shuffle.take 5 #un range notre methode to_a convertie par array ya lexecution de shuffle de melange q
@@ -72,18 +85,6 @@ class Loto
        puts "You loose !"
        return false
     end
-  end
-
-  private
-  def self.get_grid # on définit une méthode self.get_grid de classe : Loto, pour créer la grille = grid
-    grid = []
-    5.times do  # objet c'est 5 la methode .times pour refaire la methode 5fois'
-      input = gets.to_i 
-      grid << input # << = push : pour ajouter dans la grille ce qui a été tapé clavier, grid c'est la variable local que la methode que comporte le tableau'
-    end
-    #pour retourner grid pour revoyer la methode puts qui est nil 
-    puts "votre grille est : #{grid}" 
-    grid
   end
 
 end
