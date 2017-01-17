@@ -1,9 +1,9 @@
 # rcrire une methode 
 #qui prend une instance de fixnum en argumenrt (accepte de 0 a 9)
 #qui retour la chine de caractere du chiffre ecrit en toute lettres
-class Number
+class Fixnum
 
-  def self.french_number number
+  def french_number number
    case number # mon switch case sur une valeur number
       when 0..16 # je rentre ds ce cas
           ["zero","un","deux","trois","quatre","cinq","six","cept","huit","neuf","dix","onze",
