@@ -2,7 +2,8 @@ require 'date'        # pour importer le fichier
 class Loto
 
   attr_reader :picked_balls
-
+  attr_writer :picked_balls
+  
    def self.get_flash # flash : methode qui nous donne un tableau de 5 premiers chiffres allant de 1 à 45
     (1..45).to_a.shuffle.take 5 #un range notre methode to_a convertie par array ya lexecution de shuffle de melange q
   end
