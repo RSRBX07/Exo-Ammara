@@ -10,6 +10,10 @@
 # puts my_dice.roll 4
 
 # test de loto
+#my_loto = Loto.new
+#my_grid = Loto.get_grid
+#my_loto.has_winner?
+#my_loto.validate_grid Loto.get_grid
 
 
 
@@ -29,11 +33,12 @@ else
   puts "nobody win"
 end
 
+# pour faire un tirage avec draw
+loto_du_lundi.draw
+puts loto_du_lundi.picked_balls
 
 
-
-
-require'./number_french_class.rb'
-fix_number= Number.french_number 26
-puts fix_number
+#require'./number_french_class.rb'
+#fix_number= Number.french_number 26
+#puts fix_number
 
