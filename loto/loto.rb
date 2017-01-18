@@ -72,3 +72,18 @@ end
 show_result sorted_grid, sorted_draw
 
 
+def draw_done? #si le tirage est fait  ?
+  !@picked_balls.to_a.empty? # si il y'a des balls ou pas pour voir si le tirage est fait ou pas
+end  
+
+
+#enregistrer une grille pour le loto courant
+def validate_grid grid
+
+  # verifier que le tirage n'a pas encore eu lieu 
+  @saved_grids ||=[]
+  
+# TODO check draw isnot yet done
+  return @saved_grids if draw_done?
+  @saved_grids.push grid 
+end  
