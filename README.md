@@ -1,3 +1,2 @@
 # Exo-Ammara
-Cour Ruby
-vnnkjnkj
+[![CircleCI](https://circleci.com/gh/RSRBX07/Exo-Ammara.svg?style=svg)](https://circleci.com/gh/RSRBX07/Exo-Ammara)
