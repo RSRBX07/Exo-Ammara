@@ -1,3 +1,21 @@
+ #return the number of existing objects
+  # open irb
+  #> Vehicle.count
+  #=>0
+  #>Vehicle.new
+  #>Vehicle.count
+  #1
+
+class Counter
+attr_reader :count
+
+  def self.count
+   @count
+   puts Vehicule.self.count
+  end  
+end  
+
+
 class Vehicle
   attr_reader :position
   attr_reader :out_of_order
