@@ -5,39 +5,51 @@
   #>Vehicle.new
   #>Vehicle.count
   #1
-
 class Counter
-attr_reader :count
+  def add_one
+    new_val = Counter.value + 1
+    #new_val = 10
+    File.open "./tmp/counter.txt", "w" do |counter_file|
+      counter_file.write new_val
+    end
+  end
 
-  def self.count
-   @count
-   puts Vehicule.self.count
-  end  
-end  
-
+  def self.value   
+    File.open "./tmp/counter.txt", "r" do |counter_file|
+      counter_file.each_line {|line|  return line.to_i}
+    end    
+  end    
+end
 
 class Vehicle
   attr_reader :position
   attr_reader :out_of_order
 
-  def self.mon_new
-    puts 'im creating a new vehicle'
-    Object.new
-  end  
-
 
   def initialize
-    @position = 'roubaix'
-    @out_of_order = false
+      @position = 'roubaix'
+      @out_of_order = false      
+      puts "i am finishing initialization my instance"
+      Counter.new.add_one
   end   
 
+  def self.new
+    puts 'im creating a new vehicle'
+    super
+  end  
+ 
+
   def move (destination)
-    puts 'changement de position'
-    @position = destination
-   
-  end
-  peugeot = Vehicle.mon_new  
+      puts 'changement de position'
+      @position = destination
+    
+  end  
 end
+
+peugeot = Vehicle.new 
+
+puts Counter.value 
+
 
 
 #tahiti='tahiti'
