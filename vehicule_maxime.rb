@@ -55,14 +55,14 @@
 # puts p.position
 # puts Plane.count
 
-class Plane
-    @@all=[]
-    def initialize
-      @@counter
-      @@all.push.self  
-    end    
-    airbus=Plane.new
-    boing=Plane.new
-end    
-plane.class_variable_gets(:@@all)
-plane.class_variable_gets(:@@counter)
+# class Plane
+#     @@all=[]
+#     def initialize
+#       @@counter
+#       @@all.push.self  
+#     end    
+#     airbus=Plane.new
+#     boing=Plane.new
+# end    
+# plane.class_variable_gets(:@@all)
+# plane.class_variable_gets(:@@counter)
