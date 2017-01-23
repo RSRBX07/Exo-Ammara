@@ -1,8 +1,9 @@
 class SayController < ApplicationController
   def hello
+    @now=DateTime.now
   end
 
-  def good
+  def goodbye
   end
 
   def bay
