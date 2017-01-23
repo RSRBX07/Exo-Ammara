@@ -16,8 +16,7 @@
 #my_loto.validate_grid Loto.get_grid
 
 
-
-require relative  '../loto/lotoavecclass.rb'      #require relative cest la methode avec largument nom du fichier ./loto/lotoavecclass.rb'
+require_relative  '../lib/loto/lotoavecclass.rb'      #require relative cest la methode avec largument nom du fichier ./loto/lotoavecclass.rb'
                                                   #le requirepour atteindre notre fichier nimporte quel endroit dans ruby
 
 RSpec.describe Loto do    # la class RSpec avec la methode describe pour appele la classe de lobjet Loto
@@ -41,11 +40,13 @@ RSpec.describe Loto do    # la class RSpec avec la methode describe pour appele 
     expect(loto_draw.size).to equal 5  #equal 5 renvoi si le equal lidentification et egal a 5 nombres
     expect(loto_draw).to eql loto.draw # on testcest le resultat est egal a tableau  
   end
+
   it 'validate a grid register this grid' do
      loto = Loto.new #instancier une class Loto.new dans loto
      grid = [1,2,3,4,5] # grid variable contien un objet qui un tableau
      validated_grids = loto.validate_grid grid  # validate_grid on lui assigne une methode dinstance 
      expect (validated_grids).to inclued grid   #qui test grid sil est inclue dans validate_grids ou plutot validated grids contien grid
+  end
 end
 
 
