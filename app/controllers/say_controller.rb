@@ -3,7 +3,7 @@ class SayController < ApplicationController
     @now=DateTime.now
   end
 
-  def goodbye
+  def goodbye    
   end
 
   def bay
