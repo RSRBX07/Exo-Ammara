@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<p>
+<strong>Name:</stong>
+<%@game.name%>
+</p>
+
+<p>there is currently<%@game.players.to_s%> </p>
+
+
+
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>
