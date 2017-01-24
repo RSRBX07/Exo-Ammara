@@ -24,7 +24,7 @@ RSpec.describe Loto do    # la class RSpec avec la methode describe pour appele 
     Loto.get_grid
   end
 
-  it 'give a radom flash grid' do #on appelle une methode it dans un bloc 4fois de la classe LOto
+  xit 'give a radom flash grid' do #on appelle une methode it dans un bloc 4fois de la classe LOto
     expect(Loto.get_flash).not_to be_nil   #renvoi un nil
     expect(Loto.get_flash).to be_a #Array renvoi un tableau
     expect(Loto.get_flash.size).to              #equal 5 renvoi si le equal lidentification et egal a 5 nombres
