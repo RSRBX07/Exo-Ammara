@@ -18,8 +18,8 @@ require 'rails_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-RSpec.describe GamesController, type: :controller, skipe: true do
 
+RSpec.describe GamesController, type: :controller, skip: true do
   # This should return the minimal set of attributes required to create a valid
   # Game. As you add validations to Game, be sure to
   # adjust the attributes here as well.
